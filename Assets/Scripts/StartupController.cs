@@ -18,8 +18,7 @@ public class StartupController : MonoBehaviour
         Managers.ManagersStarted -= ManagersStartedCallback;
         Managers.ManagersProgress -= ManagersProgressCallback;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         

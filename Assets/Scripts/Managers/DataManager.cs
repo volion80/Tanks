@@ -7,10 +7,7 @@ public class DataManager : MonoBehaviour, IGameManager
     public ManagerStatus status {get; private set;}
     
     public void Startup() {
-        Debug.Log("Data manager starting...");
-        
         status = ManagerStatus.Started;
-        
     }
 
     public void SaveGameState()
@@ -36,17 +33,5 @@ public class DataManager : MonoBehaviour, IGameManager
         Managers.Enemy.UpdateData(0);
         
         Managers.Level.RestartCurrent();
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

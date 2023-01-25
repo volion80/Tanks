@@ -9,13 +9,11 @@ public class EnemyAI : MonoBehaviour
     public float speed = 3.0f;
     public float obstacleRange = 5.0f;
     
-    // Start is called before the first frame update
     void Start()
     {
         _alive = true;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (_alive)

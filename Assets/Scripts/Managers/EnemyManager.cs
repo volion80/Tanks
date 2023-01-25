@@ -11,17 +11,9 @@ public class EnemyManager : MonoBehaviour, IGameManager
 
     public static Action EnemyHit;
     public static Action LevelComplete;
-    
-    void Start()
-    {
-        
-    }
-    
+
     public void Startup() {
-        Debug.Log("Enemy manager starting...");
-        
         UpdateData(0);
-        
         status = ManagerStatus.Started;
     }
 

@@ -14,10 +14,7 @@ public class PlayerManager : MonoBehaviour, IGameManager
     public static Action PlayerLivesDecreased;
     
     public void Startup() {
-        Debug.Log("Player manager starting...");
-        
         UpdateData(0);
-        
         status = ManagerStatus.Started;
     }
     
@@ -48,7 +45,6 @@ public class PlayerManager : MonoBehaviour, IGameManager
     public void UpdateData(int hurt)
     {
         this.hurt = hurt;
-
         LivesUpdated?.Invoke();
     }
 }

@@ -36,18 +36,6 @@ public class Managers : MonoBehaviour
         
         StartCoroutine(StartupManagers());
     }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private IEnumerator StartupManagers()
     {

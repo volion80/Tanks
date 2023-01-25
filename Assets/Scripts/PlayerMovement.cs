@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // [SerializeField] private Transform target;
     private Transform target;
     
     public float rotSpeed = 10.0f;
     public float moveSpeed = 200.0f;
     
     private Rigidbody _rigidbody;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         target = Camera.main.transform;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         Vector3 movement = Vector3.zero;

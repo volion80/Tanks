@@ -20,10 +20,7 @@ public class LevelManager : MonoBehaviour, IGameManager
 
     public void Startup()
     {
-        Debug.Log("Level manager starting...");
-        
         UpdateData(0, 2);
-        
         status = ManagerStatus.Started;
     }
 
