@@ -22,6 +22,7 @@ public class SceneController : MonoBehaviour
         _random = new Random();
 
         SetEnemy();
+        SetMusic();
         
         CreateEnemies();
     }
@@ -49,6 +50,11 @@ public class SceneController : MonoBehaviour
                 _enemy = enemyLevelTwo;
                 break;
         }
+    }
+
+    private void SetMusic()
+    {
+        Managers.Audio.PlayLevelMusic();
     }
 
     void CreateEnemy()

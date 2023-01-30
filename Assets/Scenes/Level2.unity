@@ -2033,6 +2033,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 907959813363793214, guid: 659733be54570924d816105dbd8fdf9b, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ea1fd3707c2585429833c59faa98b2f, type: 3}
     - target: {fileID: 962126056738565511, guid: 659733be54570924d816105dbd8fdf9b, type: 3}
       propertyPath: m_RootOrder
       value: 7

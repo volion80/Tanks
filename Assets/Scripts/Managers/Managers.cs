@@ -7,12 +7,14 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerManager))]
 [RequireComponent(typeof(EnemyManager))]
 [RequireComponent(typeof(LevelManager))]
+[RequireComponent(typeof(AudioManager))]
 public class Managers : MonoBehaviour
 {
     public static DataManager Data {get; private set;}
     public static LevelManager Level {get; private set;}
     public static PlayerManager Player {get; private set;}
     public static EnemyManager Enemy {get; private set;}
+    public static AudioManager Audio {get; private set;}
 
     private List<IGameManager> _startSequence;
 
@@ -27,12 +29,14 @@ public class Managers : MonoBehaviour
         Level = GetComponent<LevelManager>();
         Player = GetComponent<PlayerManager>();
         Enemy = GetComponent<EnemyManager>();
+        Audio = GetComponent<AudioManager>();
 
         _startSequence = new List<IGameManager>();
         _startSequence.Add(Player);
         _startSequence.Add(Enemy);
         _startSequence.Add(Level);
         _startSequence.Add(Data);
+        _startSequence.Add(Audio);
         
         StartCoroutine(StartupManagers());
     }
