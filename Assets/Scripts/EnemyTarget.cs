@@ -21,18 +21,8 @@ public class EnemyTarget : MonoBehaviour
         {
             behavior.SetAlive(false);
         }
-        StartCoroutine(Die());
-    }
-
-    private IEnumerator Die()
-    {
-        transform.Rotate(-10, -50, 10);
-        
-        yield return new WaitForSeconds(1.0f);
+        Managers.Enemy.UpdateKilled();
         
         Destroy(this.gameObject);
-        
-        Managers.Enemy.UpdateKilled();
     }
-        
 }

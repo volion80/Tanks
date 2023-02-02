@@ -956,6 +956,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 9145129188765496083, guid: 659733be54570924d816105dbd8fdf9b, type: 3}
   enemyLevelOne: {fileID: 5844911182860459586, guid: 8af944ad69a457f418ae702614252961, type: 3}
   enemyLevelTwo: {fileID: 5844911182860459586, guid: dadd9da11d2014b428fb9846d792f7cc, type: 3}
+  bigExplosionPrefab: {fileID: 187400562014292769, guid: 53062cfc7c829504295b74c9b00dbd1e, type: 3}
+  smallExplosionPrefab: {fileID: 1606174013938400848, guid: 1a10d9b8e514b174fa0ba5568a99915d, type: 3}
 --- !u!114 &763355340
 MonoBehaviour:
   m_ObjectHideFlags: 0

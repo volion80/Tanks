@@ -12,8 +12,6 @@ public class DataManager : MonoBehaviour, IGameManager
 
     public void SaveGameState()
     {
-        Dictionary<string, object> gamestate = new Dictionary<string, object>();
-
         PlayerPrefs.SetInt("hurt", Managers.Player.hurt);
         PlayerPrefs.SetInt("curLevel", Managers.Level.curLevel);
         PlayerPrefs.SetInt("saved", 1);

@@ -9,6 +9,9 @@ public class SceneController : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject enemyLevelOne;
     [SerializeField] private GameObject enemyLevelTwo;
+    
+    [SerializeField] private GameObject bigExplosionPrefab;
+    [SerializeField] private GameObject smallExplosionPrefab;
 
     private GameObject[] _startPoints;
     private Random _random;
@@ -18,6 +21,9 @@ public class SceneController : MonoBehaviour
     {
         PlayerManager.PlayerLivesDecreased += PlayerLivesDecreasedCallback;
         EnemyManager.EnemyHit += EnemyHitCallback;
+        
+        Shell.shellExplosion += shellExplosionCallBack;
+        
         _startPoints = GameObject.FindGameObjectsWithTag("Start Point");
         _random = new Random();
 
@@ -31,6 +37,8 @@ public class SceneController : MonoBehaviour
     {
         PlayerManager.PlayerLivesDecreased -= PlayerLivesDecreasedCallback;
         EnemyManager.EnemyHit -= EnemyHitCallback;
+        
+        Shell.shellExplosion -= shellExplosionCallBack;
     }
 
     void Update()
@@ -95,5 +103,21 @@ public class SceneController : MonoBehaviour
     private void EnemyHitCallback()
     {
         CreateEnemy();
+    }
+
+    private void shellExplosionCallBack(Vector3 position, bool onTarget)
+    {
+        StartCoroutine(ExplodeHitOffTarget(position, onTarget));
+    }
+    
+    private IEnumerator ExplodeHitOffTarget(Vector3 position, bool onTarget)
+    {
+        GameObject explosionPrefab = onTarget ? bigExplosionPrefab : smallExplosionPrefab;
+        GameObject shellExplosion = Instantiate(explosionPrefab) as GameObject;
+        shellExplosion.transform.position = position;
+        
+        yield return new WaitForSeconds(2.0f);
+        
+        Destroy(shellExplosion);
     }
 }

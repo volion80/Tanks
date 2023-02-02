@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
+    private GameObject _shellExplosion;
+    
     public float speed = 10.0f;
+
+    public static Action<Vector3, bool> shellExplosion;
     
     void Start()
     {
@@ -21,7 +25,15 @@ public class Shell : MonoBehaviour
     {
         EnemyTarget enemy = other.GetComponent<EnemyTarget>();
         if (enemy != null) {
+            Vector3 position = enemy.transform.TransformPoint(0,0.5f,0);
+            shellExplosion?.Invoke(position, true);
+            
             enemy.ReactToHit();
+        }
+        else
+        {
+            Vector3 position = transform.TransformPoint(0,0,-1.0f);
+            shellExplosion?.Invoke(position, false);
         }
         Destroy(this.gameObject);
     }

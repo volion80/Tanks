@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60092fbab7fd0b64cbe0dc6a5cfaf776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  smallExplosionPrefab: {fileID: 1261948400487752351, guid: bd2bfa62dbd36444187b4968376f7c80, type: 3}
+  speed: 60
 --- !u!54 &5582643167373552291
 Rigidbody:
   m_ObjectHideFlags: 0
