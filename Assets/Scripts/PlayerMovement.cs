@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    void Hurt()
+    public void Hurt()
     {
         Destroy(this.gameObject);
         Managers.Player.UpdateHurt();

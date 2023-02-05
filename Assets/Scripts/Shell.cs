@@ -24,11 +24,19 @@ public class Shell : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         EnemyTarget enemy = other.GetComponent<EnemyTarget>();
+        PlayerMovement player = other.GetComponent<PlayerMovement>();
         if (enemy != null) {
             Vector3 position = enemy.transform.TransformPoint(0,0.5f,0);
             shellExplosion?.Invoke(position, true);
             
             enemy.ReactToHit();
+        }
+        else if (player != null)
+        {
+            Vector3 position = player.transform.TransformPoint(0,0.5f,0);
+            shellExplosion?.Invoke(position, true);
+            
+            player.Hurt();
         }
         else
         {

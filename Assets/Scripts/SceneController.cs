@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject enemyLevelOne;
     [SerializeField] private GameObject enemyLevelTwo;
+    [SerializeField] private GameObject enemyLevelThree;
     
     [SerializeField] private GameObject bigExplosionPrefab;
     [SerializeField] private GameObject smallExplosionPrefab;
@@ -56,6 +57,9 @@ public class SceneController : MonoBehaviour
                 break;
             case 2:
                 _enemy = enemyLevelTwo;
+                break;
+            case 3:
+                _enemy = enemyLevelThree;
                 break;
         }
     }

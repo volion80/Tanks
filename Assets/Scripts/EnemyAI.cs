@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    private bool _alive;
-    
+    [SerializeField] private GameObject shellPrefab;
+
     public float speed = 3.0f;
     public float obstacleRange = 5.0f;
+    public bool canShoot = false;
+    
+    private bool _alive;
+    private GameObject _shell;
     
     void Start()
     {
@@ -23,6 +27,18 @@ public class EnemyAI : MonoBehaviour
             RaycastHit hit;
             if (Physics.SphereCast(ray, 0.75f, out hit))
             {
+                if (canShoot)
+                {
+                    GameObject hitObject = hit.transform.gameObject;
+                    if (hitObject.GetComponent<PlayerMovement>())
+                    {
+                        if (_shell == null) {
+                            _shell = Instantiate(shellPrefab) as GameObject;
+                            _shell.transform.position = transform.TransformPoint(0,1.5f,3);
+                            _shell.transform.rotation = transform.rotation;
+                        }
+                    }
+                }
                 if (!hit.collider.gameObject.CompareTag("Player") && hit.distance < obstacleRange)
                 {
                     float angle = Random.Range(-110, 110);

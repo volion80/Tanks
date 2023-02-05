@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour, IGameManager
 
     public void Startup()
     {
-        UpdateData(0, 2);
+        UpdateData(0, 3);
         status = ManagerStatus.Started;
     }
 
@@ -69,6 +69,11 @@ public class LevelManager : MonoBehaviour, IGameManager
                 this.startEnemyCount = 5;
                 this.enemiesToKill = 4;
                 this.playersLivesMax = 2;
+                break;
+            case 3:
+                this.startEnemyCount = 5;
+                this.enemiesToKill = 5;
+                this.playersLivesMax = 3;
                 break;
         }
     }
